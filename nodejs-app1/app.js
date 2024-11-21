@@ -57,7 +57,7 @@ app.get("/", (req, res) => {
               body: JSON.stringify(formData)
             });
             const result = await response.json();
-            document.getElementById("result").innerHTML = `Message sent! MessageId: ${result.MessageId}`;
+            document.getElementById("result").innerHTML = \`Message sent! MessageId: \${result.MessageId}\`;
           } catch (error) {
             document.getElementById("result").innerHTML = "Error sending message";
           }

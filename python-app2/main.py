@@ -5,7 +5,7 @@ import json
 
 app = FastAPI()
 
-sqs = boto3.client("sqs", region_name="us-east-1")
+sqs = boto3.client("sqs", region_name="us-east-1", aws_access_key_id="", aws_secret_access_key="")
 QUEUE_URL = "https://sqs.us-east-1.amazonaws.com/975635808270/hello-world-apps.fifo"
 
 @app.get("/", response_class=HTMLResponse)

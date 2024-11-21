@@ -6,12 +6,18 @@ services:
       context: ./nodejs-app1
     ports:
       - "3001:3000"
+    environment:
+      - AWS_ACCESS_KEY_ID=
+      - AWS_SECRET_ACCESS_KEY=
 
   nodejs-app2:
     build:
       context: ./nodejs-app2
     ports:
       - "3002:3000"
+    environment:
+      - AWS_ACCESS_KEY_ID=
+      - AWS_SECRET_ACCESS_KEY=
 
   python-app1:
     build:
