@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  nodejs-app1:
+    build:
+      context: ./nodejs-app1
+    ports:
+      - "3001:3000"
+
+  nodejs-app2:
+    build:
+      context: ./nodejs-app2
+    ports:
+      - "3002:3000"
+
+  python-app1:
+    build:
+      context: ./python-app1
+    ports:
+      - "8001:8000"
+
+  python-app2:
+    build:
+      context: ./python-app2
+    ports:
+      - "8002:8000"
