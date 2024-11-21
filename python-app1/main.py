@@ -1,13 +1,10 @@
 from fastapi import FastAPI, Request, Form
-from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
 import boto3
 import json
 import time
 
 app = FastAPI()
-templates = Jinja2Templates(directory="templates")
 
 sqs = boto3.client("sqs", region_name="us-east-1")
 QUEUE_URL = "https://sqs.us-east-1.amazonaws.com/975635808270/hello-world-apps.fifo"
