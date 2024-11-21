@@ -31,20 +31,20 @@ app.get("/", (req, res) => {
             const messagesDiv = document.getElementById("messages");
             
             if (data.length === 0) {
-              messagesDiv.innerHTML = "<p class=\\"no-messages\\">No messages in queue</p>";
+              messagesDiv.innerHTML = "<p class='no-messages'>No messages in queue</p>";
               return;
             }
 
             messagesDiv.innerHTML = data.map(msg => {
               const body = JSON.parse(msg.Body);
-              return `
+              return \`
                 <div class="message">
-                  <p><strong>Name:</strong> ${body.name}</p>
-                  <p><strong>Email:</strong> ${body.email}</p>
-                  <p><strong>Message:</strong> ${body.message}</p>
-                  <p><strong>Sent at:</strong> ${new Date(parseInt(msg.Attributes.SentTimestamp)).toLocaleString()}</p>
+                  <p><strong>Name:</strong> \${body.name}</p>
+                  <p><strong>Email:</strong> \${body.email}</p>
+                  <p><strong>Message:</strong> \${body.message}</p>
+                  <p><strong>Sent at:</strong> \${new Date(parseInt(msg.Attributes.SentTimestamp)).toLocaleString()}</p>
                 </div>
-              `;
+              \`;
             }).join("");
           } catch (error) {
             document.getElementById("messages").innerHTML = "Error loading messages";
